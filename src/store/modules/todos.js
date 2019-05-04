@@ -26,6 +26,12 @@ const actions = {
         await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`);
         commit('removeTodo', id);
     },
+    // TODO: PUT updated todo.
+    async updateTodo({ commit }, updatedTodo) {
+        const response = await axios.put(`https://jsonplaceholder.typicode.com/todos/${updatedTodo.id}`, updatedTodo);
+        commit('updateTodo', response.data);
+        console.log(response.data)
+    },
 
     async filterTodos({ commit }, e) {
         // Get Selected number
@@ -40,7 +46,13 @@ const mutations = {
     setTodos: (state, todos) => (state.todos = todos),
     newTodo: (state, todo) => state.todos.unshift(todo),
     removeTodo: (state, id) =>
-        state.todos = state.todos.filter(todo => todo.id !== id)
+        state.todos = state.todos.filter(todo => todo.id !== id),
+    updateTodo: (state, updatedTodo) => {
+        const index = state.todos.findIndex(todo => todo.id === updatedTodo.id)
+        if (index !== -1) {
+            state.todos.splice(index, 1, updatedTodo)
+        }
+    }
 };
 
 export default {
