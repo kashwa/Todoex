@@ -1,29 +1,6 @@
-# learn-vue-by-example
+# Todoex
 
-## Project setup
-```
-npm install
-```
+Todoex is an advanced todolist app made using **Vuex** as a state management with Frontend Vuejs and backend **JSONPLACEHOLDER**.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Pic from the App:
+![](src/store/modules/images/59267355_605944429917437_3586009864926658560_n.png)
